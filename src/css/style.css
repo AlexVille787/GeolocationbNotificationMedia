@@ -1,0 +1,317 @@
+/* src/css/style.css */
+
+/* =========================================
+   БАЗА И ФОН (КЛЕТОЧКА)
+   ========================================= */
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.timeline-wrapper {
+  width: 100%;
+  max-width: 600px;
+  background-color: #f5f5f5;
+  background-image: linear-gradient(#e0e0e0 1px, transparent 1px),
+    linear-gradient(90deg, #e0e0e0 1px, transparent 1px);
+  background-size: 20px 20px;
+  padding: 20px;
+  position: relative;
+  border: 1px solid #ccc;
+  height: fit-content;
+  min-height: 600px;
+}
+
+/* =========================================
+   ЛИНИЯ ТАЙМЛАЙНА
+   ========================================= */
+.timeline {
+  position: relative;
+  padding-left: 30px;
+  padding-bottom: 80px;
+  min-height: 400px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 9px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #888;
+}
+
+/* =========================================
+   КАРТОЧКА ПОСТА
+   ========================================= */
+.post {
+  background: #fff;
+  border: 1px solid #777;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.post::before {
+  content: "";
+  position: absolute;
+  left: -32px;
+  top: 15px;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border: 2px solid #777;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  gap: 15px;
+}
+
+.post-text-content {
+  flex: 1;
+  font-size: 15px;
+  line-height: 1.4;
+  color: #222;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.post-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.post-date {
+  font-size: 13px;
+  color: #666;
+  white-space: nowrap;
+}
+
+.post-delete-btn {
+  background: transparent;
+  border: none;
+  color: #bbb;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  margin-top: -2px;
+}
+
+.post-delete-btn:hover {
+  color: #e53935;
+  background-color: rgba(229, 57, 53, 0.1);
+}
+
+.post-delete-btn:active {
+  transform: scale(0.9);
+}
+
+.post-footer {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #555;
+}
+
+.post-icon {
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+/* =========================================
+   ПОЛЕ ВВОДА ВНИЗУ
+   ========================================= */
+.input-container {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: #fff;
+  border: 1px solid #777;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.input-field {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  resize: none;
+  font-family: inherit;
+}
+
+/* =========================================
+   ИКОНКИ (МИКРОФОН, КАМЕРА, ОТПРАВКА)
+   ========================================= */
+.input-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 10px;
+}
+
+/* Кнопки микрофона и камеры */
+.icon-btn {
+  background: transparent;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.icon-btn:hover {
+  color: #3390ec;
+  background-color: rgba(51, 144, 236, 0.1);
+}
+
+.icon-btn:active {
+  transform: scale(0.92);
+}
+
+/* Кнопка отправки (синяя стрелочка) */
+.send-btn {
+  background-color: #519ee6;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  padding: 0;
+  margin-left: 5px;
+}
+
+.send-btn:hover {
+  background-color: #2b7bc9;
+}
+
+.send-btn:active {
+  transform: scale(0.92);
+}
+
+.send-btn svg {
+  display: block;
+  margin-left: 2px;
+}
+
+/* =========================================
+   МОДАЛЬНОЕ ОКНО
+   ========================================= */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-window {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid #777;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.modal-title {
+  margin: 0 0 15px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.modal-description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.modal-subtitle {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.modal-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #777;
+  border-radius: 3px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.modal-error {
+  color: #d00;
+  font-size: 12px;
+  margin-top: 5px;
+  min-height: 15px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.modal-btn-cancel,
+.modal-btn-ok {
+  padding: 8px 20px;
+  border: 1px solid #777;
+  background: #f9f9f9;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+}
+
+.modal-btn-ok {
+  background: #fff;
+  font-weight: bold;
+}
+
+.modal-btn-cancel:hover,
+.modal-btn-ok:hover {
+  background: #e0e0e0;
+}
