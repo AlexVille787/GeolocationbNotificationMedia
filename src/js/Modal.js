@@ -1,5 +1,5 @@
 // src/js/Modal.js
-import { parseCoordinates } from "./utils.js";
+import { parseCoordinates } from "./utils";
 
 export default class Modal {
   constructor() {

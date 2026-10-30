@@ -1,8 +1,8 @@
 // src/index.js
 import "./css/style.css";
-import GeolocationService from "./js/Geolocation.js";
-import Modal from "./js/Modal.js";
-import TextPost from "./js/Text.js";
+import GeolocationService from "./js/Geolocation";
+import Modal from "./js/Modal";
+import TextPost from "./js/Text";
 
 document.addEventListener("DOMContentLoaded", () => {
   const inputField = document.querySelector(".input-field");
